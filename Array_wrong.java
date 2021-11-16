@@ -5,11 +5,10 @@ public class Array_wrong {
         List<Integer> arrlist = new ArrayList<>();
         List<Integer> Rndlist = new ArrayList<>();
         int []arrnum = {2,7,11,15};
-        arrlist.add(arrnum[0]);
-        arrlist.add(arrnum[1]);
-        arrlist.add(arrnum[2]);
-        arrlist.add(arrnum[3]);
-        for (int i = 4; i < 5; i++){
+        for (int i = 0 ; i < arrnum.length ; i++){
+            arrlist.add(arrnum[i]);
+        }
+        for (int i = arrnum.length; i < arrnum.length + 1; i++){
             Rndlist.clear();
             Rndlist.add ((int)(Math.random() * i));
             Rndlist.add ((int)(Math.random() * i));
