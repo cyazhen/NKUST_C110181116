@@ -9,19 +9,19 @@ public class ArrayEx_1 {
         arrlist.add(arrnum[1]);
         arrlist.add(arrnum[2]);
         arrlist.add(arrnum[3]);
-        for (int i = 3; i < 4; i++){
+        for (int i = 4; i < 5; i++){
+            Rndlist.clear();
             Rndlist.add ((int)(Math.random() * i));
             Rndlist.add ((int)(Math.random() * i));
             if (Rndlist.get(0) == Rndlist.get(1)){
-                Rndlist.clear();
-                i = 3;
+                i -= 1;
                 continue;
             }
+            Collections.sort(Rndlist);
+            int Target = arrnum[Rndlist.get(0)] + arrnum[Rndlist.get(1)];
+            System.out.println(arrlist);
+            System.out.println("Target= " + Target);
+            System.out.println(Rndlist);
         }
-        Collections.sort(Rndlist);
-        int Target = arrnum[Rndlist.get(0)] + arrnum[Rndlist.get(1)];
-        System.out.println(arrlist);
-        System.out.println("Target= " + Target);
-        System.out.println(Rndlist);
     }
 }
