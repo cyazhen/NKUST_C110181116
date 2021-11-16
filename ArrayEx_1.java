@@ -19,9 +19,9 @@ public class ArrayEx_1 {
             }
             Collections.sort(Rndlist);
             int Target = arrnum[Rndlist.get(0)] + arrnum[Rndlist.get(1)];
-            System.out.println(arrlist);
+            System.out.println("InPut= " + arrlist);
             System.out.println("Target= " + Target);
-            System.out.println(Rndlist);
+            System.out.println("Output: " + Rndlist);
         }
     }
 }
