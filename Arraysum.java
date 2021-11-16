@@ -1,24 +1,33 @@
 import java.util.*;
 
 public class Arraysum {
+    static int tarGet;
+    static int [] numArray = {2,7,11,15};
+    static List<Integer> outputNum = new ArrayList<>();
+
     public static void main(String[] args) {
-        HashSet<Integer> num = new HashSet<>();
-        List<Integer> sumarr = new ArrayList<>();
-        Scanner arraytarget = new Scanner(System.in);
-        System.out.println("輸入target: ");
-        int target = arraytarget.nextInt();
-        int [] array = {3,2,4};
-        for (int i = 0 ; i < array.length ; i++){           //兩個數依序相加直到為target目標的數,並儲存在HashSet使其不重複輸出
-            for (int j = i + 1 ; j < array.length ; j++){
-                if (target == (array[i] + array[j])){
-                    num.add(i);
-                    num.add(j);
+        inPut();
+        for (int i = 0 ; i < numArray.length ; i++){           //兩個數依序相加直到為target目標的數,並儲存在Num
+            for (int j = i + 1 ; j < numArray.length ; j++){
+                if (tarGet == (numArray[i] + numArray[j])){
+                    outputNum.add(i);
+                    outputNum.add(j);
                     break;
                 }
             }
         }
-        System.out.println("input= " + array);
-        System.out.println("Target= " + target);
-        System.out.println("Output: " + num);
+        outPut();
+    }
+
+    static void inPut(){
+        Scanner arrayTarget = new Scanner(System.in);
+        System.out.println("輸入target: ");
+        tarGet = arrayTarget.nextInt();
+    }
+
+    static void outPut(){
+        System.out.println("input= " + Arrays.toString(numArray));
+        System.out.println("Target= " + tarGet);
+        System.out.println("Output: " + outputNum);
     }
 }
