@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Arraysum {
+public class arrayTarget {
     static int tarGet;
     static int [] numArray = {2,7,11,15};
     static List<Integer> outputNum = new ArrayList<>();

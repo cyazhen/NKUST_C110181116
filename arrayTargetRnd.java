@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Array_wrong {
+public class arrayTargetRnd {
     public static void main(String[] args) {
         List<Integer> arrlist = new ArrayList<>();
         List<Integer> Rndlist = new ArrayList<>();
