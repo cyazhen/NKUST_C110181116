@@ -12,7 +12,7 @@ public class stringArray {
             if (strPick.containsKey(charGet)){          //判斷是否出現重複字元
                 start = Math.max(start,strPick.get(charGet)+1);
             }
-            outPut = Math.max(end - start +1,outPut);   //比較長度，取最長
+            outPut = Math.max(end - start +1,outPut);   //比較不重複字元長度，取最長
             strPick.put(charGet,end);
         }
         System.out.println("Output: " + outPut);
