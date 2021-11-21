@@ -15,9 +15,10 @@ public class myStringArray {
             char charGet = inputStr.charAt(i);
             if (strPickMap.containsKey(charGet) == false) {     //判斷Map是否有字元的存在
                 noRepeatCount++;                                //不存在的話，noRepeatCount累加
+                outputResult = Math.max(noRepeatCount , outputResult);      //如出現重複字元，則將結果與累加的值進行比較，取最大值
             }
             else{
-                outputResult = Math.max(noRepeatCount , outputResult);  //如出現重複字元，則將結果與累加的值進行比較，取最大值
+                strPickMap.clear();
                 noRepeatCount = 1;  //不重複字元長度，將由當前的字元開始重新累加
             }
             strPickMap.put(charGet,i);
