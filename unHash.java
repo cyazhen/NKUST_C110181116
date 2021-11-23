@@ -10,7 +10,7 @@ class UnHash{
 
     public static String revHash(long hash) {
         List<Character> correctChr = new ArrayList();
-        List<Character> output = new ArrayList<>();
+        List<Character> outputResult = new ArrayList<>();
         //chrGet取得正確字元
         //output字元排序校正
         while (true){
@@ -26,9 +26,9 @@ class UnHash{
             }
         }
         for (int i = correctChr.size() - 1 ; i >= 0 ; i--){     //將字元排序校正
-            output.add(correctChr.get(i));                      //例：peels 校正為 sleep
+            outputResult.add(correctChr.get(i));                      //例：peels 校正為 sleep
         }
-        return (output.toString());
+        return (outputResult.toString());
     }
 
     public static long hash(String s){
