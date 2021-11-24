@@ -17,7 +17,7 @@ class UnHash{
             for (int i = 0; i < letters.length(); i++){
                 if ((hash - i) % 23 == 0){                      //以0開始取數直到letters的長度，進行運算，用來判斷字元正確位置
                     hash = (hash - letters.indexOf(i)) / 23;    //替換數字用來判斷下一個字元的位置
-                    correctChr.add(letters.charAt(i));              //將正確字元放進correctChr
+                    correctChr.add(letters.charAt(i));          //將正確字元放進correctChr
                     break;
                 }
             }
@@ -26,7 +26,7 @@ class UnHash{
             }
         }
         for (int i = correctChr.size() - 1 ; i >= 0 ; i--){     //將字元排序校正
-            outputResult.add(correctChr.get(i));                      //例：peels 校正為 sleep
+            outputResult.add(correctChr.get(i));                //例：peels 校正為 sleep
         }
         return (outputResult.toString());
     }

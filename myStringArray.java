@@ -13,13 +13,13 @@ public class myStringArray {
 
         for(int i = 0 ; i < inputStr.length() ; i++){
             char charGet = inputStr.charAt(i);
-            if (strPickMap.containsKey(charGet) == false) {     //判斷Map是否有字元的存在
-                noRepeatCount++;                                //不存在的話，noRepeatCount累加
+            if (strPickMap.containsKey(charGet) == false) {                 //判斷Map是否有字元的存在
+                noRepeatCount++;                                            //不存在的話，noRepeatCount累加
                 outputResult = Math.max(noRepeatCount , outputResult);      //將結果與累加的值進行比較，取最大值
             }
             else{
                 strPickMap.clear();
-                noRepeatCount = 1;  //不重複字元長度，將由當前的字元開始重新累加
+                noRepeatCount = 1;                                           //不重複字元長度，將由當前的字元開始重新累加
             }
             strPickMap.put(charGet,i);
         }
