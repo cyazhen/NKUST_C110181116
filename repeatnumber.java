@@ -4,7 +4,7 @@ public class repeatnumber {
     public static void main(String[] args) {
         Map<Character,Integer> checkRepeatMap = new HashMap<>();
         List<String> outputResult = new ArrayList<>();
-        int noRepeatCount = 0;                                //noRepeatCount用來計算不重複數字的數量
+        int noRepeatCount = 0;                                //noRepeatCount用來計算第一次出現的數字的數量
         Scanner strInput = new Scanner(System.in);
         System.out.println("請輸入字串：");
         String inputNum = strInput.nextLine();
