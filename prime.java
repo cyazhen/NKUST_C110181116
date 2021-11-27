@@ -6,10 +6,10 @@ public class prime {
         int i , j;
         for (i = 2; i <= 100; i++) {    //i,被除數
             for (j = 2; j < i; j++) {   //j,除數
-                if (i % j == 0)    //取最小因數
+                if (i % j == 0)         //取因數
                     break;
             }
-            if (j == i){    //判斷最小因數是否為自己
+            if (j == i){                //判斷因數是否為自己
                 primeArray.add(i);
                 System.out.println(j);
             }
