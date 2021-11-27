@@ -4,7 +4,7 @@ public class repeatnumber {
     public static void main(String[] args) {
         Map<Character,Integer> checkRepeatMap = new HashMap<>();
         List<String> outputResult = new ArrayList<>();
-        int firstNumCount = 0;                                //repeatCount第一次出現的數字的數量
+        int firstNumCount = 0;                                //firstNumCount計算第一次出現的數字的數量
         Scanner strInput = new Scanner(System.in);
         System.out.println("請輸入字串：");
         String inputNum = strInput.nextLine();
