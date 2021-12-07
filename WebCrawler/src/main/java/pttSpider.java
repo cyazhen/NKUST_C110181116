@@ -15,23 +15,21 @@ public class pttSpider {
             for (Element hotClass : hotClasses) {
                 //最後輸出文章分類
                 String pttTitle = hotClass.select("div:contains(◎)").text();
-                //讀取每個熱門看板網址
+                //讀取每個熱門看板網址，並抓取資料
                 String articleSortDoc = hotClass.absUrl("href").toString();
                 Document hotBoardDoc = Jsoup.connect(articleSortDoc).get();
                 //抓取每個文章網址
                 Elements articleSortClasses = hotBoardDoc.select("#main-container .r-ent .title a");
-                for (Element articleClass : articleSortClasses) {
+                for (Element articleSortClass : articleSortClasses) {
                     //最後輸出文章標題
-                    String articleTitle = articleClass.text();
-                    //讀取每個文章網址
-                    String articleDoc = articleClass.absUrl("href").toString();
+                    String articleTitle = articleSortClass.text();
+                    //讀取每個文章網址，並抓取資料
+                    String articleDoc = articleSortClass.absUrl("href").toString();
                     Document articleClasses = Jsoup.connect(articleDoc).get();
-                    //抓取每個文章留言
-                    Elements articleElements = articleClasses.select("#main-container #main-content");
                     //確認是否有留言
-                    if (!articleElements.select(".push").isEmpty()) {
+                    if (!articleClasses.select(".push").isEmpty()) {
                         //有的話則，抓出每個文章第一個留言資料
-                        Element firstPush = articleElements.select(".push").get(0);
+                        Element firstPush = articleClasses.select("#main-container #main-content .push").get(0);
                         String commitName = firstPush.select("span").get(1).text();
                         String firstCommit = firstPush.select("span").get(2).text();
                         //輸出結果
