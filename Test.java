@@ -1,34 +1,19 @@
 import java.util.*;
 
-public class Test{
+import javax.swing.JOptionPane;
 
-    public static void main (String[] args) {
-        System.out.println(revHash(6933552791181934L));
-        System.out.println(hash("justdoit")); //574318821802
-    }
-
-    public static String letters = "cdefghijlmnoqstuvxz";
-
-    public static String revHash(long hash) {
-        String result="";
-        String newResult="";
-
-        while(hash != 7){
-            result = result + letters.charAt((int) (hash % 23));
-            hash = hash/ 23;
-        }
-
-        for (int i = result.length(); i>=1; i--){
-            newResult += result.charAt(i-1);
-        }
-        return newResult;
-    }
-
-    public static long hash(String s){
-        long h = 7;
-        for (int i = 0; i < s.length(); i++){
-            h = h * 23 + letters.indexOf(s.charAt(i));
-        }
-        return h;
+public class Test {
+    public static void main(String[] args) {
+        //彈出訊息對話方塊
+        JOptionPane.showMessageDialog(null, "hello world !");
+        //彈出確認對話方塊
+        int  option=JOptionPane.showConfirmDialog(null, "1+1=2?");
+        if(option==JOptionPane.YES_OPTION)
+            System.out.println("你選擇的是Yes");
+        else
+            System.out.println("你選擇的是No");
+        String name=JOptionPane.showInputDialog("請輸入你的名字：");
+        int    age =Integer.parseInt(JOptionPane.showInputDialog("請輸入你的年齡："));
+        JOptionPane.showMessageDialog(null, "你好，"+name+"\n你今年"+age+"歲了");
     }
 }
