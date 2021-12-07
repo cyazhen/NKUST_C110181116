@@ -16,6 +16,7 @@ public class pttSpider {
                 Document hotBoardDoc = Jsoup.connect(articleSortDoc).get();
                 Elements articleSortClasses = hotBoardDoc.select("#main-container .r-ent .title a");
                 for (Element articleClass : articleSortClasses){
+                    System.out.println(articleClass.absUrl("href"));
                     String articleTitle = articleClass.text();                             //最後輸出文章標題
                     String articleDoc = articleClass.absUrl("href").toString();
                     Document articleClasses = Jsoup.connect(articleDoc).get();
