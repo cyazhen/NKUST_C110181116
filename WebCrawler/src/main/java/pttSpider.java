@@ -14,7 +14,7 @@ public class pttSpider {
             Elements hotClasses = doc.select("#main-container .b-ent a");
             for (Element hotClass : hotClasses) {
                 //最後輸出文章分類
-                String pttTitle = hotClass.select("div:contains(◎)").text();
+                String pttTitle = hotClass.select(".board-name").text();
                 //讀取每個熱門看板網址，並抓取資料
                 String articleSortDoc = hotClass.absUrl("href").toString();
                 Document hotBoardDoc = Jsoup.connect(articleSortDoc).get();
