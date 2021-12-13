@@ -11,7 +11,7 @@ public class pttSpider {
             //抓取ptt熱門看板資料
             Document doc = Jsoup.connect("https://www.ptt.cc/bbs/hotboards.html").get();
             //抓取ptt每個熱門看板網址
-            Elements hotClasses = doc.select("#main-container .b-ent a");
+            Elements hotClasses = doc.select("#main-container .b-ent .board");
             for (Element hotClass : hotClasses) {
                 //最後輸出文章分類
                 String pttTitle = hotClass.select(".board-name").text();
