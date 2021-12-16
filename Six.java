@@ -3,7 +3,7 @@ public class Six {
         int i;
         for(i = 1;i <= 300;i++) {
             if(i % 6 == 0){
-                System.out.println(i);
+             //get second page
             }
         }
     }
