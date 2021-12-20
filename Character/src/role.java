@@ -6,13 +6,13 @@ public class role {
     String Skill_1;
     String SKill_2;
 
-    role(String roleCareer,int roleHP, int roleMP, int roleATT,String roleSkill_1,String roleSkill2) {
+    role(String roleCareer,int roleHP, int roleMP, int roleATT,String roleSkill_1,String roleSkill_2) {
         Career = roleCareer;
         HP = roleHP;
         MP = roleMP;
         ATT = roleATT;
         Skill_1 = roleSkill_1;
-        SKill_2 = roleSkill2;
+        SKill_2 = roleSkill_2;
     }
     void getCurrentStatus() {
         System.out.println("職業：" + Career);
